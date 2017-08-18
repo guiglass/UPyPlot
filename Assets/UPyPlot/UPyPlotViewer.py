@@ -1,3 +1,18 @@
+#! /usr/bin/python
+
+__author__ = "Grant Olsen"
+__copyright__ = "Copyright 2017, Grant Olsen"
+
+__license__ = "GPL"
+__version__ = "1.0.0"
+__maintainer__ = "Grant Olsen"
+__email__ = "jython.scripts@gmail.com"
+__status__ = "Beta"
+
+#--------------------------------#
+# Plot viewer for visualizing Unity script variables in realtime
+#--------------------------------#
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
