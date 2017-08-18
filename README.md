@@ -19,6 +19,10 @@ _This tool was designed to help diagnose multiple variables across multiple scri
 
 It's simple to add plotting to any private or public variable in a script. This is done by adding the **[UPyPlot.UPyPlotController.UPyProbe]** custom attribute to the variable decloration, after which you should see it in the plot.
 
+---
+![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/ExampleAttributes.png)
+---
+
 At present the tool offers some configurability such as:
 
 * Precision - Number of decimal places for each value in the plot data file.
@@ -26,7 +30,8 @@ At present the tool offers some configurability such as:
 * Max Samples - Maximum lines/history that the plot file should contain.
 
 
-![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/ExampleAttributes.png)
+
+
 **_Integrating with your own project:_**
 
 * Copy the UPyPlot folder and all of it's contents from this example's assets folder to your projects assets folder.
