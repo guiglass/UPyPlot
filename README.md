@@ -37,9 +37,9 @@ It's simple to add plotting to any private or public variable in a script. This 
 **Configuration:**
 At present the tool offers some configurability such as:
 
-* Precision - Number of decimal places for each value in the plot data file.
-* Interval - Rate in seconds which to update plot data file with new values.
-* Max Samples - Maximum lines/history that the plot file should contain.
+* Precision - _Number of decimal places for each value in the plot data file._
+* Interval - _Rate in seconds which to update plot data file with new values._
+* Max Samples - _Maximum lines/history that the plot file should contain._
 
 
 
