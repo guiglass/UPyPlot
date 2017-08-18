@@ -30,7 +30,7 @@ It's simple to add plotting to any private or public variable in a script. This 
 * Place the UPyPlotController prefab into your scene.
 * Ensure the output filename matches what is set in PlotViewer.py (default is plot.txt).
 * Add the [UPyPlot.UPyPlotController.UPyProbe] attribute to any variable you want shown in the plot.
-* Run both the PlotViewer.py Python file and start your scene (in any order). 
+* Run the PlotViewer.py Python file and start your scene (in any order). 
 * Enjoy.
 
 
