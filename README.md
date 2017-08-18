@@ -23,14 +23,6 @@ It's simple to add plotting to any private or public variable in a script. This 
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/ExampleAttributes.png)
 ---
 
-At present the tool offers some configurability such as:
-
-* Precision - Number of decimal places for each value in the plot data file.
-* Interval - Rate in seconds which to update plot data file with new values.
-* Max Samples - Maximum lines/history that the plot file should contain.
-
-
-
 
 **_Integrating with your own project:_**
 
@@ -40,6 +32,15 @@ At present the tool offers some configurability such as:
 * Add the [UPyPlot.UPyPlotController.UPyProbe] attribute to any variable you want shown in the plot.
 * Run both the PlotViewer.py Python file and start your scene (in any order). 
 * Enjoy.
+
+
+**Configuration:**
+At present the tool offers some configurability such as:
+
+* Precision - Number of decimal places for each value in the plot data file.
+* Interval - Rate in seconds which to update plot data file with new values.
+* Max Samples - Maximum lines/history that the plot file should contain.
+
 
 
 Please feel free to use this example in any way you see fit (without restriction of any kind) as well as redistribute, modify and share it with all of your friends and co-workers.
