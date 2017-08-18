@@ -12,7 +12,7 @@ _This tool was designed to help diagnose multiple variables across multiple scri
 
 **Prerequisite:**
 
-* This was built using Unity 2017, but earlier versions sould support the features.
+* This was built using Unity 2017, but earlier versions sould support the feature set.
 * Python 2.7 with MatPlotLib and NumPy installed.
 
 **How to use:**
