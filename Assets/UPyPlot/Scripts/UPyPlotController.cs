@@ -21,7 +21,7 @@ namespace UPyPlot {
 
 		[Range(2,1000)]
 		[Tooltip("Maximum lines/history that the plot file should contain.")]
-	    [SerializeField] private int maxSamples = 25;
+		[SerializeField] private int maxSamples = 25;
 		private int currentSample = 0;
 
 		private List<FieldInfo> probes = new List<FieldInfo>();
@@ -79,25 +79,6 @@ namespace UPyPlot {
 			Invoke ("CheckProbes", interval); // Start next cycle after interval delay.
 		}
 
-		private void CreateFileHeader() {
-			/*
-			 * If file already exists then this clears it's contents and prepares it for the next cycle.
-			 * It then creates a header on the first line containing all of the cached fiels names in order.
-			 */
-			string line = ""; // The string that will be written into the plot data file.
-			for (int i = 0; i < probes.Count; i++) 
-			{
-				FieldInfo fieldInfo = probes[i];
-				MonoBehaviour mono = monos [i];
-				line += mono.name + "\\" + mono.GetType().Name + "\\" + fieldInfo.Name;
-				if (i < probes.Count-1) 
-				{
-					line += ','; // Add a delimeter after all but the last index.
-				}
-			}
-			File.WriteAllText(absoluteName, '\n' + line + '\n');
-		}
-
 		private void CacheProbes() {
 			/*
 			 * Rip through all gameobjects using reflection and look for any field with 
@@ -129,6 +110,25 @@ namespace UPyPlot {
 			}
 			// done caching, time to start building the plot data file.
 			CreateFileHeader ();
+		}
+
+		private void CreateFileHeader() {
+			/*
+			 * If file already exists then this clears it's contents and prepares it for the next cycle.
+			 * It then creates a header on the first line containing all of the cached fiels names in order.
+			 */
+			string line = ""; // The string that will be written into the plot data file.
+			for (int i = 0; i < probes.Count; i++) 
+			{
+				FieldInfo fieldInfo = probes[i];
+				MonoBehaviour mono = monos [i];
+				line += mono.name + "\\" + mono.GetType().Name + "\\" + fieldInfo.Name;
+				if (i < probes.Count-1) 
+				{
+					line += ','; // Add a delimeter after all but the last index.
+				}
+			}
+			File.WriteAllText(absoluteName, '\n' + line + '\n');
 		}
 	}
 }
