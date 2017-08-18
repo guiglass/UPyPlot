@@ -36,12 +36,11 @@ It's simple to add plotting to any private or public variable in a script. This 
 
 **Configuration:**
 At present the tool offers some configurability such as:
+![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/InspectorOptions.png)
 
 * Precision - _Number of decimal places for each value in the plot data file._
 * Interval - _Rate in seconds which to update plot data file with new values._
 * Max Samples - _Maximum lines/history that the plot file should contain._
-![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/InspectorOptions.png)
-
 
 Please feel free to use this example in any way you see fit (without restriction of any kind) as well as redistribute, modify and share it with all of your friends and co-workers.
 
