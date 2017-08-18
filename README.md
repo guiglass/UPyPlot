@@ -10,7 +10,7 @@ The intention of this example was to build an easy to use plotting tool for visu
 
 _This tool was designed to help diagnose multiple variables across multiple scripts as quickly and painlessly as possible._
 
-**Prerequisite:**
+**Prerequisites:**
 
 * This was built using Unity 2017, but earlier versions sould support the feature set.
 * Python 2.7 with MatPlotLib and NumPy installed.
