@@ -17,7 +17,7 @@ _This tool was designed to help diagnose multiple variables across multiple scri
 
 **How to use:**
 
-It's simple to add plotting to any private or public variable in a script. This is done by adding the **[UPyPlot.UPyPlotController.UPyProbe]** custom attribute to the variable decloration, after which you should see it in the plot.
+It's simple to add any private or public script variable to the plot. This is done by adding a **[UPyPlot.UPyPlotController.UPyProbe]** custom attribute to the variable decloration, after which you should see it in the plot.
 
 ---
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/ExampleAttributes.png)
