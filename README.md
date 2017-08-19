@@ -42,6 +42,12 @@ At present the tool offers some configurability such as:
 * Interval - _Rate in seconds which to update plot data file with new values._
 * Max Samples - _Maximum lines/history that the plot file should contain._
 
+
+**UPyPlotAdvancedViewer:**
+I have also added a second Python script that is very similar to the simple viewer except has an additional button for changing the plot style from a single combined plot to individual plots:
+![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/Advanced.png)
+
+
 Please feel free to use this example in any way you see fit (without restriction of any kind) as well as redistribute, modify and share it with all of your friends and co-workers.
 
 Legal notice:
