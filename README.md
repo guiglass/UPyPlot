@@ -40,6 +40,7 @@ To add a probe attribute, do so as you would any other attribute, where in this 
 **Configuration:**
 
 At present the tool offers some configurability such as:
+
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/InspectorOptions.png)
 
 * Precision - _Number of decimal places for each value in the plot data file._
