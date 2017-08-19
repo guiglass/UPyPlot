@@ -38,6 +38,7 @@ To add a probe attribute, do so as you would any other attribute, where in this 
 
 
 **Configuration:**
+
 At present the tool offers some configurability such as:
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/InspectorOptions.png)
 
