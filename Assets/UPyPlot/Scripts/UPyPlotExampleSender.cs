@@ -10,7 +10,7 @@ public class UPyPlotExampleSender : MonoBehaviour {
 
 	[UPyPlot.UPyPlotController.UPyProbe] // Add probe so this value will be plotted.
 	[Range(-10,10)]                      // Add a manual control slider so its easy to change in real time.
-	[SerializeField] public float yVar; // A public variable that user can adjust manually and see in plot.
+	[SerializeField] public float yVar;  // A public variable that user can adjust manually and see in plot.
 
 	private float lastRndX = 0;
 	private float lastRndZ = 0;
