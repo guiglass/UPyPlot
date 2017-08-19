@@ -43,7 +43,8 @@ At present the tool offers some configurability such as:
 * Max Samples - _Maximum lines/history that the plot file should contain._
 
 
-**UPyPlotAdvancedViewer:**
+**Advanced Viewer (UPyPlotAdvancedViewer.py):**
+
 I have also added a second Python script that is very similar to the simple viewer except has an additional button for changing the plot style from a single combined plot to individual plots:
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/Advanced.png)
 
