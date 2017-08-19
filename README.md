@@ -45,10 +45,11 @@ At present the tool offers some configurability such as:
 
 **Advanced Viewer (UPyPlotAdvancedViewer.py):**
 
-I have also added a second Python script (similar to the basic viewer) that has an additional button for changing the plot style from a single plot to individual plots:
+I have also added a second Python script (similar to the basic viewer) that has an additional button for changing the plot style. This allows selecting between a single plot style where all lines are combined on a single axes and scale, and another where each line is on it's own individual plot axes:
 
-_Note that the individual mode appears to update at a slightly reduced rate when compared to the combined mode. I may address this in a future update._
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/Advanced.png)
+_Note that the individual mode appears to update at a slightly reduced rate when compared to the combined mode. I may address this in a future update._
+
 
 ---
 
