@@ -32,14 +32,15 @@ namespace UPyPlot {
 
 		public static UPyPlotController instance;
 
-		void Awake () {
+		void Awake () 
+		{
 			if (instance != null) 
 			{ // Singleton pattern.
 				Destroy(gameObject);
 			}else{
 				instance = this;
 			}
-				
+
 			string plotDir = Application.dataPath + "/UPyPlot/plotting_cache/"; // The directory to create the plot data file in.
 			if (!Directory.Exists(plotDir))
 			{
@@ -51,7 +52,17 @@ namespace UPyPlot {
 			Invoke ("CheckProbes", 0);
 		}
 
-		void CheckProbes () {
+		void OnEnable() 
+		{
+			Invoke ("CheckProbes", 0);
+		}
+		void OnDisable() 
+		{
+			CancelInvoke ("CheckProbes");
+		}
+
+		void CheckProbes () 
+		{
 			currentSample++;
 
 			string line = ""; // The string that will be written into the plot data file.
@@ -63,7 +74,7 @@ namespace UPyPlot {
 					line += ','; // Add a delimeter after all but the last index.
 				}
 			}
-	
+
 			List<String> lines = new List<String> (File.ReadAllLines (absoluteName));
 
 			if (currentSample >= maxSamples) { // Handle rolling the file when max number of lines has been reached.
@@ -73,13 +84,13 @@ namespace UPyPlot {
 			}
 			lines.Add (line); // Add the new plot data string to the lines list.
 			lines [0] = currentSample + "," + Time.time.ToString ("F2"); // Update the plot file meta data so the Python plot knows correct number of samples and gets the proper gametime for x axis.
-
 			File.WriteAllLines (absoluteName, lines.ToArray ()); // Write all the data to the file.
 
 			Invoke ("CheckProbes", interval); // Start next cycle after interval delay.
 		}
 
-		private void CacheProbes() {
+		private void CacheProbes() 
+		{
 			/*
 			 * Rip through all gameobjects using reflection and look for any field with 
 			 * custom attributes, if a "[UPyProbe]" attribute is found, then cache the 
@@ -112,7 +123,8 @@ namespace UPyPlot {
 			CreateFileHeader ();
 		}
 
-		private void CreateFileHeader() {
+		private void CreateFileHeader() 
+		{
 			/*
 			 * If file already exists then this clears it's contents and prepares it for the next cycle.
 			 * It then creates a header on the first line containing all of the cached fiels names in order.
