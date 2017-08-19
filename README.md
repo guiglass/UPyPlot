@@ -60,8 +60,3 @@ By downloading or using any resource from this example you agree that I (the aut
 
 *Project by: Grant Olsen (jython.scripts@gmail.com)
 Creation year: 2017*
-
-
-
-
-
