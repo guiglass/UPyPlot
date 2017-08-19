@@ -45,9 +45,12 @@ At present the tool offers some configurability such as:
 
 **Advanced Viewer (UPyPlotAdvancedViewer.py):**
 
-I have also added a second Python script that is very similar to the simple viewer except has an additional button for changing the plot style from a single combined plot to individual plots:
+I have also added a second Python script (similar to the simple viewer) that has an additional button for changing the plot style from a single plot to individual plots:
+
+_Note that the individual mode appears to update at a slightly reduced rate when compared to the combined mode. I may address this in a future update._
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/Advanced.png)
 
+---
 
 Please feel free to use this example in any way you see fit (without restriction of any kind) as well as redistribute, modify and share it with all of your friends and co-workers.
 
