@@ -39,7 +39,7 @@ To add a probe attribute, do so as you would any other attribute, where in this 
 
 **Configuration:**
 
-At present the tool offers some configurability such as:
+At present this tool offers some configurability such as:
 
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/InspectorOptions.png)
 
@@ -50,7 +50,7 @@ At present the tool offers some configurability such as:
 
 **Advanced Viewer (UPyPlotAdvancedViewer.py):**
 
-I have also added a second Python script (similar to the basic viewer) that has an additional button for changing the plot style. This allows selecting between a single plot style where all lines are combined on a single axes and scale, and another where each line is on it's own individual plot axes:
+I have also added a second Python script for an "advanced" viewer (similar to the basic viewer) and has an additional button for changing the plot style. This allows selecting between a single plot style where all lines are **combined** on a single axes and scale, and another style where each line has it's own **individual** plot axes:
 
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/Advanced.png)
 _Note that the individual mode appears to update at a slightly reduced rate when compared to the combined mode. I may address this in a future update._
