@@ -1,5 +1,5 @@
 # UPyPlot
-### Plot Unity script variables in realtime using MatPlotLib
+### Unity Python Plotting - Script variables to realtime MatPlotLib visualization
 
 
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/SceneLayout.png)
