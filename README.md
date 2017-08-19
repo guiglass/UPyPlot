@@ -18,9 +18,9 @@ _This tool was designed to help diagnose multiple variables from multiple script
 
 **How to use:**
 
-It's pretty straight forward to add a probe attribute to plot a private or public variable. A probe attribute simply works as a flag that tells the UPyPlotController to store a reference to it when it scans for probes at start time. That varialbe is then polled at a specified interval durring runtime. 
+It's pretty straight forward to add a probe attribute and plot any private or public variable. A probe attribute simply works as a flag that tells the UPyPlotController to store a reference to it when it scans all objects for probes during start time. Any varialbe with that attribute will then be polled at a specified interval durring runtime. 
 
-Ao add a probe attribute as you would any other attribute, where in this case you add a **[UPyPlot.UPyPlotController.UPyProbe]** custom attribute above the desired variable decloration. That is all that is required in order to plot a variables in a script.
+To add a probe attribute, do so as you would any other attribute, where in this case you add a **[UPyPlot.UPyPlotController.UPyProbe]** custom attribute above the desired variable decloration. And that is all that is required in order to plot a variables in a script.
 
 ---
 ![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/ExampleAttributes.png)
