@@ -49,7 +49,6 @@ namespace UPyPlot {
 			absoluteName = plotDir + plotFileName;
 
 			CacheProbes ();
-			Invoke ("CheckProbes", 0);
 		}
 
 		void OnEnable() 
@@ -63,29 +62,30 @@ namespace UPyPlot {
 
 		void CheckProbes () 
 		{
-			currentSample++;
+			if (probes.Count > 0) {
+				currentSample++;
 
-			string line = ""; // The string that will be written into the plot data file.
-			for (int i = 0; i < probes.Count; i++) {
-				FieldInfo fieldInfo = probes [i];
-				MonoBehaviour mono = monos [i];
-				line += ((float)fieldInfo.GetValue (mono)).ToString ("F" + precision);
-				if (i < probes.Count - 1) {
-					line += ','; // Add a delimeter after all but the last index.
+				string line = ""; // The string that will be written into the plot data file.
+				for (int i = 0; i < probes.Count; i++) {
+					FieldInfo fieldInfo = probes [i];
+					MonoBehaviour mono = monos [i];
+					line += ((float)fieldInfo.GetValue (mono)).ToString ("F" + precision);
+					if (i < probes.Count - 1) {
+						line += ','; // Add a delimeter after all but the last index.
+					}
 				}
+		
+				List<String> lines = new List<String> (File.ReadAllLines (absoluteName));
+
+				if (currentSample >= maxSamples) { // Handle rolling the file when max number of lines has been reached.
+					int range = currentSample - maxSamples; // If slider was adjust by more than one, this will be the range.
+					lines.RemoveRange (2, range); // Dont modify the first two lines (meta data, header data) but remove all lines for range after them.
+					currentSample -= range; // Update the current sample count to accuratly reflect the number of line now currently in the plot data file.
+				}
+				lines.Add (line); // Add the new plot data string to the lines list.
+				lines [0] = currentSample + "," + Time.time.ToString ("F2"); // Update the plot file meta data so the Python plot knows correct number of samples and gets the proper gametime for x axis.
+				File.WriteAllLines (absoluteName, lines.ToArray ()); // Write all the data to the file.
 			}
-
-			List<String> lines = new List<String> (File.ReadAllLines (absoluteName));
-
-			if (currentSample >= maxSamples) { // Handle rolling the file when max number of lines has been reached.
-				int range = currentSample - maxSamples; // If slider was adjust by more than one, this will be the range.
-				lines.RemoveRange (2, range); // Dont modify the first two lines (meta data, header data) but remove all lines for range after them.
-				currentSample -= range; // Update the current sample count to accuratly reflect the number of line now currently in the plot data file.
-			}
-			lines.Add (line); // Add the new plot data string to the lines list.
-			lines [0] = currentSample + "," + Time.time.ToString ("F2"); // Update the plot file meta data so the Python plot knows correct number of samples and gets the proper gametime for x axis.
-			File.WriteAllLines (absoluteName, lines.ToArray ()); // Write all the data to the file.
-
 			Invoke ("CheckProbes", interval); // Start next cycle after interval delay.
 		}
 
