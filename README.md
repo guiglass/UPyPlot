@@ -52,7 +52,7 @@ At present this tool offers some configurability such as:
 
 I have also added a second Python script for an "advanced" viewer (similar to the basic viewer) and has an additional button for changing the plot style. This allows selecting between a single plot style where all lines are **combined** on a single axes and scale, and another style where each line has it's own **individual** plot axes:
 
-![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/AdvancedViewer.png)
+![alt tag](https://raw.githubusercontent.com/guiglass/UPyPlot/master/AdvancedPlotViewer.png)
 _Note that the individual mode appears to update at a slightly reduced rate when compared to the combined mode. I may address this in a future update._
 
 
