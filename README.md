@@ -14,7 +14,7 @@ _This tool was designed to help diagnose multiple variables from multiple script
 
 * Example was created using Unity 2017, but earlier versions should support the feature set.
 * Python 2.7 with MatPlotLib and NumPy installed.
-* The was only tested on C# scripts.
+* All examples were tested on C# scripts only, no guarentees for javascript.
 
 **How to use:**
 
