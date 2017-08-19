@@ -22,6 +22,8 @@ from matplotlib.widgets import Button
 class UPyPlot ():
 
     def __init__(self):
+        self.colors=['#5e81b5','#e19c24','#8fb131','#ec6235','#8778b3','#c56e1a','#5d9ec8','#ffbf00','#a5609d','#929600','#ea5536','#6685d9','#f99f12','#bc5b80','#47b76d']
+
         self.fig = plt.figure("UPyPlot Advanced Window")
         self.fig.set_facecolor((0.63, 0.63, 0.63))
 
@@ -63,6 +65,7 @@ class UPyPlot ():
                 ax.clear()
 
     def animate(self, i):
+
         try: #try to read in the file, if No such file or directory then just return and try again
             pollData = open("plotting_cache\plot.txt","r").read()
         except IOError:
@@ -84,7 +87,6 @@ class UPyPlot ():
         self.nElements = dataHeader.__len__()
         self.yElements = [np.array([]) for x in xrange(self.nElements)]
 
-
         for i, eachLine in enumerate(dataArray):
             if len(eachLine) > 1:
                 for n, val in enumerate(eachLine.split(',')):
@@ -93,15 +95,24 @@ class UPyPlot ():
         xar = np.linspace(gameTime - (i * 0.1), gameTime, i)
         if xar.shape[0] == currentSample:
             self.manageAxes()
-
+            C = 0
             for n, yax in enumerate(self.yElements):
                 if (yax.shape[0]==currentSample):
                     try: # try to display this axis, if the data is corrupt then just skip it this frame.
                         ax = self.axs[0 if self.plotCombined else n]
-                        ax.plot(xar, yax, label=dataHeader[n])
+                        ax.plot(xar, yax, label=dataHeader[n], C=self.colors[C])
                         ax.legend(loc='upper left', fontsize=7)
+                        ax.yaxis.grid(True)
+                        if not self.plotCombined and not n == self.yElements.__len__() - 1:
+                            ax.tick_params(
+                                axis='x',          # changes apply to the x-axis
+                                labelbottom='off'  # labels along the bottom edge are off
+                            )
                     except:
                         pass
 
-t = UPyPlot()
-t.run()
+                    C=(C+1) % len(self.colors)
+
+if __name__ == "__main__":
+    t = UPyPlot()
+    t.run()
