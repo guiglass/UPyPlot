@@ -105,17 +105,21 @@ namespace UPyPlot {
 				foreach (MonoBehaviour m in ms) 
 				{
 					const BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance; // Flags to filter the list of fields that are checked for custom attributs.
-					FieldInfo[] fields = m.GetType().GetFields(flags); 
-					foreach (FieldInfo fieldInfo in fields) // For each field in this monobehavior check it for custom attributs
-					{
-						var attrs = fieldInfo.GetCustomAttributes(typeof(UPyProbe), false); // Check this field for only [UPyProbe] custom attributs, ignore any others.
-						var hasProbe = attrs.Length > 0; // True if one was present.
-						if (hasProbe) // the field in this monobehavior had a "[UPyProbe]" Custom attribute.
-						{ 
-							monos.Add (m); // Cache the monobehavior script for this field.
-							probes.Add (fieldInfo); // Cahce the fieldInfo.
-							//Debug.Log ("Obj: " + m.name + "|" + m.GetType().Name + ", Field: " + fieldInfo.Name + ", Type: " + fieldInfo.GetValue(m) ) ;
+					try {
+						FieldInfo[] fields = m.GetType().GetFields(flags); 
+						foreach (FieldInfo fieldInfo in fields) // For each field in this monobehavior check it for custom attributs
+						{
+							var attrs = fieldInfo.GetCustomAttributes(typeof(UPyProbe), false); // Check this field for only [UPyProbe] custom attributs, ignore any others.
+							var hasProbe = attrs.Length > 0; // True if one was present.
+							if (hasProbe) // the field in this monobehavior had a "[UPyProbe]" Custom attribute.
+							{ 
+								monos.Add (m); // Cache the monobehavior script for this field.
+								probes.Add (fieldInfo); // Cahce the fieldInfo.
+								//Debug.Log ("Obj: " + m.name + "|" + m.GetType().Name + ", Field: " + fieldInfo.Name + ", Type: " + fieldInfo.GetValue(m) ) ;
+							}
 						}
+					} catch {
+
 					}
 				}
 			}
